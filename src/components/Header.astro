@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+import About from "../pages/about.astro";
+import Contact from "../pages/contact.astro";
+import Home from "../pages/home.astro";
+import Projects from "../pages/projects.astro";
+
+const links = [
+    { href: 'home', label: "Home" },
+    { href: 'about', label: "About" },
+    { href: 'projects', label: "Projects" },
+    { href: 'contact', label: "Contact" },
+];
+---
+
+<Layout title="nav">
+    <div class="container fixed z-50 bg-white nav p-3 flex flex-row justify-center gap-10 items-center">
+        {links.map(link => (
+            <a class="text font-semibold" id={`link-${link.href}`} href={`#${link.href}`}>
+                <span class="pb-4">{link.label}</span>
+            </a>
+        ))}
+    </div>
+    <div id="home" class="home h-screen justify-center items-center flex">
+        <Home />
+    </div>
+    <div id="about" class="about min-h-screen">
+        <About />
+    </div>
+    <div id="projects" class="projects min-h-screen">
+      <Projects />
+    </div>
+    <div id="contact" class="contact">
+      <Contact />
+    </div>
+</Layout>
+
+<style>
+  .decoration {
+    border-bottom: 5px solid #FF6464;
+  }
+  .text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+</style>
+
+<script>
+  
+  document.getElementById('link-home').classList.add('decoration');
+
+  function toggleDecoration(selectedId) {
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.classList.remove('decoration');
+    });
+
+    const selectedLink = document.getElementById(`link-${selectedId}`);
+    if (selectedLink) {
+      selectedLink.classList.add('decoration');
+    }
+  }
+
+  const links = document.querySelectorAll('.nav a');
+  links.forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault(); 
+
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: 'smooth'
+        });
+        toggleDecoration(targetId); 
+      }
+    });
+  });
+</script>

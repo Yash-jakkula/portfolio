@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="home">
+    <div class="home p-3 mt-5 animation: bounce 1s infinite container flex flex-col md:flex-row justify-around items-center">
+        <div class="flex flex-col w-100 md:m-0 md:w-1/2 gap-2">
+            <span class="md:text-6xl text-2xl font-bold">Hi, I am <span style="color: #FF6464;">Yashwanth</span></span>
+            <span class="md:text-4xl text-xl font-semibold mt-2">Software Developer</span>
+            <span class="mt-4 md:text-xl text-lg">A continuous learner with a solid foundation in Computer Science and Engineering, seeking to develop scalable and efficient 
+                software applications. Skilled in Full Stack Development and problem-solving, I aim to contribute to innovative projects and deliver 
+                high-quality solutions. </span>
+            <a download="GFG" href="https://drive.google.com/file/d/1qjodaCT5VK-X0xavhmfx3vVC806UszNe/view?usp=sharing"><button class="mt-4 btn md:w-1/4 rounded-md p-2 text-white font-semibold">Download Resume</button></a>
+        </div>
+        <div class="img">
+            <img src="src/assests/profile.png" />
+        </div>
+        
+    </div>
+</Layout>
+
+<style>
+   .btn{
+    background-color: #FF6464;
+
+   }
+   .home{
+    animation-timing-function: ease-in;
+    
+   }
+
+        @keyframes slideIn {
+            to {
+                left: 50px; /* Final position */
+            }
+        }
+
+   
+</style>

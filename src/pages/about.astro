@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+const images = [
+    {src:'/src/assests/knowvation.jpg',left:20,top:"",right:"",bottom:""}
+]
+---
+
+<Layout title="about">
+<div class="about md:p-10 flex justify-center min-h-screen flex-col">
+    <div class="grid grid-cols-2 md:flex md:flex-row justify-between md:gap-0 mt-10 gap-4">
+        <span class="flex font-bold flex-col items-center md:text-black text-pink-500 text-poppins md:text-xl text-lg">
+          15+
+          <span class="md:text-2xl text-sm text-black">
+            Repositories
+          </span>
+        </span>
+        <div
+          class="md:flex hidden"
+          style={{ width: "4px", backgroundColor: "#3970FF" }}
+        ></div>
+        <span class="flex flex-col items-center md:text-black text-blue-500 font-bold text-poppins md:text-2xl text-lg">
+          4+
+          <span class="md:text-2xl text-sm text-black">
+            Client projects
+          </span>
+        </span>
+        <div
+          class="hidden md:flex"
+          style={{ width: "4px", backgroundColor: "#7BF27C" }}
+        ></div>
+        <span class="flex font-bold flex-col items-center md:text-black text-green-500 text-poppins md:text-2xl text-lg">
+          2+
+          <span class="md:text-2xl text-sm text-black">
+            Mobile Apps
+          </span>
+        </span>
+        <div
+          class="hidden md:flex"
+          style={{ width: "4px", backgroundColor: "#FF9040" }}
+        ></div>
+
+        <span class="flex flex-col font-bold items-center md:text-black text-orange-500 text-poppins md:text-2xl text-lg">
+          2+
+          <span class="md:text-2xl text-sm text-black">
+            Web application
+          </span>
+        </span>
+      </div>
+      <div class="flex flex-col md:flex-row md:mt-20 mt-10 justify-center md:ml-10">
+        <div class="flex p-5 flex-col w-full md:w-1/2 gap-2">
+            <span class="font-bold md:text-3xl text-xl">Knowvation Learnings Pvt Ltd</span>
+            <span class="font-semibold md:text-2xl text-lg">Full Stack Developer-Intern</span>
+            <div class="info flex flex-col">
+                <span>Responsible for developing and maintaing web and mobile application</span>
+                <span>Increased Application efficiency through code optimization</span>
+                <span>Developed reusable components and maintainable code for efficient future use</span>
+            </div>
+        </div>
+        <div class="img">
+            <img class="md:w-1/3 hidden md:block"src="/src/assests/Knowvation.jpg" />
+        </div>
+      </div>
+          
+      
+    </div>
+</Layout>
+
+<style>
+    .about{
+        background-color: #23113B;
+        background-image: url("src/assests/fullstack.png");
+        opacity: 0.7;
+    }
+
+
+    .about span {
+        color:white
+    }
+
+    .about{
+    }
+</style>
